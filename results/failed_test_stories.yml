@@ -1,0 +1,51 @@
+version: "3.1"
+stories:
+- story: sad path 1 (.\venv\Lib\site-packages\rasa\cli\initial_project\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: affirm
+  - action: utter_happy  # predicted: action_feedback
+- story: sad path 2 (.\venv\Lib\site-packages\rasa\cli\initial_project\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_feedback
+- story: sad path 3 (.\venv\Lib\site-packages\rasa\cli\initial_project\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: action_default_fallback
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_feedback
+- story: say goodbye (.\venv\Lib\site-packages\rasa\cli\initial_project\tests\test_stories.yml)
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye  # predicted: action_greet_name
+- story: bot challenge (.\venv\Lib\site-packages\rasa\cli\initial_project\tests\test_stories.yml)
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot  # predicted: utter_greet
+- story: happy path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy  # predicted: utter_location
+- story: happy path 2 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy  # predicted: utter_location
+  - intent: goodbye
+  - action: utter_goodbye  # predicted: action_greet_name

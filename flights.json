@@ -1,0 +1,15 @@
+{
+    "123": {
+      "status": "on time",
+      "departure": "New York",
+      "arrival": "Paris",
+      "time": "2024-09-26 15:30"
+    },
+    "456": {
+      "status": "delayed",
+      "departure": "London",
+      "arrival": "Tokyo",
+      "time": "2024-09-27 09:00"
+    }
+  }
+  
